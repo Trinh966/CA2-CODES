@@ -1,0 +1,121 @@
+<!--    COMLPETED100-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Progress Entry Details</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background-color: #6c757d;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .btn-custom {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+            color: white;
+        }
+        .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .navbar-brand {
+          font-weight: 700;
+          color: #ff69b4;
+          font-size: 1.5rem;
+        }
+        .nav-link {
+          color: #4a4a4a;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ff69b4;
+        }
+            
+    </style>
+</head>
+<body>
+        <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">GlowGuide</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ingredients">Ingredients</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/progress">Progress</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <a href="/login" class="btn btn-dark me-2">SIGN IN</a>
+          <a href="/signup" class="btn btn-outline-dark">SIGN UP</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+        <h1 class="text-center mb-5">Progress Entry Details</h1>
+        <div class="card">
+            <div class="card-header">
+                <%= new Date(entry.date).toLocaleDateString() %>
+            </div>
+            <div class="card-body">
+                <p><strong>Skin Condition:</strong> <%= entry.skin_condition %></p>
+                <p><strong>Products Used:</strong> <%= entry.products_used %></p>
+                <p><strong>Notes:</strong> <%= entry.notes %></p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 d-flex justify-content-between">
+                <a href="/editprogress/<%= entry.id %>" class="btn btn-primary">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+                <a href="/progress/delete/<%= entry.id %>" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </a>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a href="/progress" class="btn btn-custom">
+                <i class="fas fa-arrow-left"></i> Back to All Entries
+            </a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

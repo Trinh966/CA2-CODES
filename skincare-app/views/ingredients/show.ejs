@@ -1,0 +1,132 @@
+<!--OK-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Ingredient Details</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .card-header {
+            background-color: #6c757d;
+            color: white;
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #495057;
+        }
+        .btn-custom {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+            color: white;
+        }
+        
+        .navbar {
+          background-color: #ffffff;
+          box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .navbar-brand {
+          font-weight: 700;
+          color: #ff69b4;
+          font-size: 1.5rem;
+        }
+        .nav-link {
+          color: #4a4a4a;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ff69b4;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+          <a class="navbar-brand" href="/">GlowGuide</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/products">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/ingredients">Ingredients</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/progress">Progress</a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <a href="/login" class="btn btn-dark me-2">SIGN IN</a>
+              <a href="/signup" class="btn btn-outline-dark">SIGN UP</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <%= ingredient.name %>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <span class="info-label">Description:</span>
+                    <p><%= ingredient.description %></p>
+                </div>
+                <div class="mb-3">
+                    <span class="info-label">Benefits:</span>
+                    <p><%= ingredient.benefits %></p>
+                </div>
+                <div class="mb-3">
+                    <span class="info-label">Skin Types:</span>
+                    <p><%= ingredient.skin_types %></p>
+                </div>
+                <div class="mb-3">
+                    <span class="info-label">Utilization:</span>
+                    <p><%= ingredient.utilization %></p>
+                </div>
+                <div class="mb-3">
+                    <span class="info-label">Possible Side Effects:</span>
+                    <p><%= ingredient.side_effects %></p>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  
+                    <a href="/ingredients" class="btn btn-custom">
+                        <i class="fas fa-arrow-left"></i> Back to List
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
